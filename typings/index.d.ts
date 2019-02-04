@@ -275,15 +275,15 @@ declare type createInviteOpts = {
 }
 
 declare type editRoleOpts = {
-  serverID: string,
-  roleID: string,
-  name: string,
-  hoist: boolean,
-  permissions: permissions,
-  color: colors | number,
-  mentionable: boolean,
+  serverID: string;
+  roleID: string;
+  name?: string;
+  hoist?: boolean;
+  permissions?: permissions;
+  color?: colors | number;
+  mentionable?: boolean;
   // I dont know what position is and it is unused in current code
-  position: any
+  position: any;
 }
 
 declare type deleteRoleOpts = {

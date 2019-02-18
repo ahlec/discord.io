@@ -298,13 +298,11 @@ declare type editNicknameOpts = {
 }
 
 declare type editChannelPermissionsOpts = {
-  channelID: string,
-  userID: string,
-  roleID: string,
-  allow: Discord.Permissions[],
-  deny: Discord.Permissions[],
-  default: Discord.Permissions[]
-}
+  channelID: string;
+  allow?: Discord.Permissions[];
+  deny?: Discord.Permissions[];
+  default?: Discord.Permissions[];
+} & ({ userID: string } | { roleID: string });
 
 declare type editServerWidgetOpts = {
   serverID: string,
@@ -640,37 +638,37 @@ declare namespace Discord {
 		DARK_NAVY: number;
 	}
 
-  export interface Permissions {
-		GENERAL_CREATE_INSTANT_INVITE: number;
-		GENERAL_KICK_MEMBERS: number;
-		GENERAL_BAN_MEMBERS: number;
-		GENERAL_ADMINISTRATOR: number;
-		GENERAL_MANAGE_CHANNELS: number;
-		GENERAL_MANAGE_GUILD: number;
-		GENERAL_MANAGE_ROLES: number;
-		GENERAL_MANAGE_NICKNAMES: number;
-		GENERAL_CHANGE_NICKNAME: number;
-        GENERAL_MANAGE_EMOJIS: number;
+  export enum Permissions {
+    GENERAL_CREATE_INSTANT_INVITE,
+    GENERAL_KICK_MEMBERS,
+    GENERAL_BAN_MEMBERS,
+    GENERAL_ADMINISTRATOR,
+    GENERAL_MANAGE_CHANNELS,
+    GENERAL_MANAGE_GUILD,
+    GENERAL_MANAGE_ROLES,
+    GENERAL_MANAGE_NICKNAMES,
+    GENERAL_CHANGE_NICKNAME,
+    GENERAL_MANAGE_EMOJIS,
 
-		TEXT_READ_MESSAGES: number;
-		TEXT_SEND_MESSAGES: number;
-		TEXT_SEND_TTS_MESSAGE: number;
-		TEXT_MANAGE_MESSAGES: number;
-		TEXT_EMBED_LINKS: number;
-		TEXT_ATTACH_FILES: number;
-		TEXT_READ_MESSAGE_HISTORY: number;
-		TEXT_MENTION_EVERYONE: number;
-		TEXT_EXTERNAL_EMOJIS: number;
+    TEXT_READ_MESSAGES,
+    TEXT_SEND_MESSAGES,
+    TEXT_SEND_TTS_MESSAGE,
+    TEXT_MANAGE_MESSAGES,
+    TEXT_EMBED_LINKS,
+    TEXT_ATTACH_FILES,
+    TEXT_READ_MESSAGE_HISTORY,
+    TEXT_MENTION_EVERYONE,
+    TEXT_EXTERNAL_EMOJIS,
 
-		VOICE_CONNECT: number;
-		VOICE_SPEAK: number;
-		VOICE_MUTE_MEMBERS: number;
-		VOICE_DEAFEN_MEMBERS: number;
-		VOICE_MOVE_MEMBERS: number;
-		VOICE_USE_VAD: number;
+    VOICE_CONNECT,
+    VOICE_SPEAK,
+    VOICE_MUTE_MEMBERS,
+    VOICE_DEAFEN_MEMBERS,
+    VOICE_MOVE_MEMBERS,
+    VOICE_USE_VAD,
 
-        UNKNOWN_29: number;
-	}
+    UNKNOWN_29
+  }
 }
 
 export = Discord;

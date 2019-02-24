@@ -251,9 +251,10 @@ declare type banUserOpts = {
 
 declare type createChannelOpts = {
   serverID: string,
-  type: "voice" | "text" | "category";
+  type?: "voice" | "text" | "category";
   name: string
-}
+  parentID?: string;
+};
 
 declare type editChannelInfoOpts = {
   channelID: string,

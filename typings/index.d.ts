@@ -384,14 +384,21 @@ declare namespace Discord {
   }
 
   export class Channel extends Resource {
-    name: string;
-    id: string;
-    guild_id: string;
-    type: string;
-    topic: string;
-    position: number;
-    last_message_id: string;
     members: Object;
+    permissions: {
+      user: { [userID: string]: { allow: number; deny: number } };
+      role: { [roleID: string]: { allow: number; deny: number } };
+    };
+    guild_id: string;
+    type: number;
+    topic: string | null;
+    rate_limit_per_user: number;
+    position: number;
+    parent_id?: string;
+    nsfw?: boolean;
+    name: string;
+    last_message_id: string | null;
+    id: string;
   }
 
   export class DMChannel extends Resource {

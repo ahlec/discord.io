@@ -22,9 +22,6 @@ declare type game = {
 
 declare type colors = "DEFAULT" | "AQUA" | "GREEN" | "BLUE" | "PURPLE" | "GOLD" | "ORANGE" | "RED" | "GREY" | "DARKER_GREY" | "NAVY" | "DARK_AQUA" | "DARK_GREEN" | "DARK_BLUE" | "DARK_PURPLE" | "DARK_GOLD" | "DARK_ORANGE" | "DARK_RED" | "DARK_GREY" | "LIGHT_GREY" | "DARK_NAVY";
 
-declare type channelType = "voice" | "text";
-
-
 /**
  * Events callbacks
  */
@@ -254,7 +251,7 @@ declare type banUserOpts = {
 
 declare type createChannelOpts = {
   serverID: string,
-  type: channelType,
+  type: "voice" | "text" | "category";
   name: string
 }
 

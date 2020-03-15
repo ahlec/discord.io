@@ -193,6 +193,19 @@ declare type getPinnedMessagesOpts = {
   channelID: string
 }
 
+declare type addReactionOpts = {
+  channelID: string;
+  messageID: string;
+  reaction: string;
+}
+
+declare type removeReactionOpts = {
+  channelID: string;
+  messageID: string;
+  userID?: string;
+  reaction: string;
+}
+
 declare type deletePinnedMessageOpts = {
   channelID: string,
   messageID: string
@@ -536,6 +549,8 @@ declare namespace Discord {
     pinMessage(options: pinMessageOpts, callback?: callbackFunc): void
     deletePinnedMessage(options: deletePinnedMessageOpts, callback?: callbackFunc): void
     getPinnedMessages(options: getPinnedMessagesOpts, callback?: callbackFunc): void
+    addReaction(options: addReactionOpts, callback?: callbackFunc): void;
+    removeReaction(options: removeReactionOpts, callback?: callbackFunc): void;
 
     /**
      * VOICE CHANNELS

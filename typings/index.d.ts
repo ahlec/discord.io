@@ -394,6 +394,7 @@ declare namespace Discord {
     embed_enabled: boolean;
     embed_channel_id: string;
     default_message_notifications: number;
+    system_channel_id?: string;
   }
 
   export class Channel extends Resource {

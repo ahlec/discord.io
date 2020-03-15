@@ -61,9 +61,9 @@ declare type guildMembersChunkCallback = (event: WebSocketEvent) => void;
  */
 declare interface cbError {
 		message?: string,
-		statusCode?: string,
+		statusCode?: number,
 		statusMessage?: string,
-		response?: string
+		response?: unknown
 }
 
 declare interface cbRes {
